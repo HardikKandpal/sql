@@ -1,9 +1,8 @@
 Flask==3.1.0
 Flask-Cors==5.0.0
-sqlite3  # Built-in with Python, no need to specify
 transformers==4.48.2
 sentence-transformers==3.4.1
-torch  # Required for sentence-transformers
-numpy  # Needed by torch & transformers
+torch  
+numpy
 faker==35.2.0
 vercel
