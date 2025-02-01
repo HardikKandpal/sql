@@ -1,6 +1,12 @@
 {
-    "scripts": {
-      "start": "python3 backend/app.py"
-    }
+    "builds": [
+      {
+        "src": "backend/app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      { "src": "/.*", "dest": "backend/app.py" }
+    ]
   }
   
