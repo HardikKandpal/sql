@@ -4,7 +4,7 @@ from faker import Faker
 
 fake = Faker()
 
-DB_PATH = "company.db"
+DB_PATH = "data\company.db"
 
 def create_database():
     conn = sqlite3.connect(DB_PATH)
