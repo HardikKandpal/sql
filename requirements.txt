@@ -56,7 +56,6 @@ sympy==1.13.1
 thinc==8.3.4
 threadpoolctl==3.5.0
 tokenizers==0.21.0
-torch==2.6.0
 tqdm==4.67.1
 transformers==4.48.2
 typer==0.15.1
