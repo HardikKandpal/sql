@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder="../frontend", template_folder="../frontend"
 CORS(app)
 
 # Instantiate the QueryProcessor (ensure correct db path)
-query_processor = QueryProcessor(db_path='data\company.db')
+query_processor = QueryProcessor(db_path='data/company.db')
 #query_processor = NLPQueryProcessor(db_path='data\company.db')
 
 # Serve the main HTML page

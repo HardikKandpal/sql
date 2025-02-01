@@ -5,7 +5,7 @@ from nlp_model import NLPProcessor
 
 
 class QueryProcessor:
-    def __init__(self, db_path='data\company.db'):
+    def __init__(self, db_path='data/company.db'):
         self.db_path = db_path
         self.nlp= NLPProcessor()
     
