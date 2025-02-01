@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General page styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0cc7f;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #chat-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+
+        #user-input {
+            width: calc(100% - 60px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        button {
+            width: 50px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Instruction Box Styling */
+        #instructions-box {
+            background-color: #f4f7fb;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: block;
+            position: relative;
+        }
+
+        .instruction-item {
+            padding: 8px;
+            margin: 4px 0;
+            background-color: #e9eff6;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .instruction-item:hover {
+            background-color: #d1dfea;
+        }
+
+        /* Suggestions Box Styling */
+        #suggestions-box {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            position: relative;
+        }
+
+        .suggestion-item {
+            padding: 8px;
+            margin: 4px 0;
+            background-color: #e9eff6;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .suggestion-item:hover {
+            background-color: #d1dfea;
+        }
+
+        /* Message styles */
+        .message {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .user-message {
+            background-color: #e8af46;
+            text-align: left;
+        }
+
+        .bot-message {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+
+        <div id="header">Chat Assistant for SQLite Database</div>
+
+        <!-- Instructions Box -->
+        <div id="instructions-box">
+            <h4 style="font-weight: bold; color: #333;">Example Questions : </h4>
+            <div class="instruction-item">Show me all employees in the Sales department.</div>
+            <div class="instruction-item">List all employees hired after 2020-01-01.</div>
+            <div class="instruction-item">What is the total salary expense for the Marketing department?</div>
+            <div class="instruction-item">Who is the manager of the Marketing department?</div>
+        </div>
+
+        <!-- Chat Box -->
+        <div id="chat-box"></div>
+
+        <!-- User Input -->
+        <input type="text" id="user-input" placeholder="Ask me a question..." oninput="showSuggestions()">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
